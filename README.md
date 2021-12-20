@@ -51,9 +51,18 @@ If we need to add business logic before this component can be used, we need to c
 export default UserInformationContainer;
 ```
 
-## Router
+## Route
 
-A router is a react component responsible for managing sub-routes and the route itself. Following is the file/folder structure:
+A route is a react component responsible for managing sub-routes and the route itself. The name will be the **route's name** + `'Route'` (as suffix).
+
+### Naming Convention
+
+| Human Readable  | URL/URI (Kebab Case)             | Route                 | Route's Component |
+| --------------- | -------------------------------- | --------------------- | ----------------- |
+| User Management | `user-management`                | `UserManagementRoute` | `UserManagement`  |
+| Create Account  | `user-management/create-account` | `CreateAccountRoute`  | `CreateAccount`   |
+
+Following is the file/folder structure:
 
 ```
 .
@@ -76,3 +85,19 @@ A router is a react component responsible for managing sub-routes and the route 
             |   ...
             `-- index.tsx
 ```
+
+### What does it contain?
+
+- `index.tsx` contains the component that manages routing, this includes accessing route parameters, managing sub-routes and rendering of the route itself. The component name will be the same as the folder name i.e. `AboutRoute` and will be exported as default.
+
+  ```js
+  export default AboutRoute;
+  ```
+
+- `component/` directory will hold the component that will be rendered on the route/url. It will follow the component's file structure excluding naming of the folder. The component will be named after the route name **(excluding the `Route` suffix)** i.e. the component of `AboutRoute` will be `About`.
+
+  ```js
+  export default About;
+  ```
+
+- `routes/` directory will hold the Route components of the sub-routes. The Route components will follow the Route's file structure.
