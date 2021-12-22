@@ -1,3 +1,4 @@
+**MOVED TO GIST: [Project Stucture for React](https://gist.github.com/arbaz52/448a3809032ae17815dea00388e4491d)**
 # react-ps
 
 `react-ps` is an example react-app for a proposed React.js application's project structure. The document is currently under developement but will be available soon for inspiration.
